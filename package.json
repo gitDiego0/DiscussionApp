@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fix": "eslint . --fix"
+    "fix": "eslint . --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "12.0.9",
@@ -22,6 +23,12 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.28.0",
+    "husky": ">=6",
+    "lint-staged": ">=10",
     "prettier": "^2.5.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
